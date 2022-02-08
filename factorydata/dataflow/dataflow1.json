@@ -1,0 +1,32 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DebtData",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SwedenDebtData",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Filter1"
+				}
+			],
+			"script": "source(output(\n\t\t{Country Name} as string,\n\t\t{Country Code} as string,\n\t\t{Indicator Name} as string,\n\t\t{Indicator Code} as string,\n\t\t{1998Q1} as string,\n\t\t{1998Q2} as string,\n\t\t{1998Q3} as string,\n\t\t{1998Q4} as string,\n\t\t{1999Q1} as string,\n\t\t{1999Q2} as string,\n\t\t{1999Q3} as string,\n\t\t{1999Q4} as string,\n\t\t{2000Q1} as string,\n\t\t{2000Q2} as string,\n\t\t{2000Q3} as string,\n\t\t{2000Q4} as string,\n\t\t{2001Q1} as string,\n\t\t{2001Q2} as string,\n\t\t{2001Q3} as string,\n\t\t{2001Q4} as string,\n\t\t{2002Q1} as string,\n\t\t{2002Q2} as string,\n\t\t{2002Q3} as string,\n\t\t{2002Q4} as string,\n\t\t{2003Q1} as string,\n\t\t{2003Q2} as string,\n\t\t{2003Q3} as string,\n\t\t{2003Q4} as string,\n\t\t{2004Q1} as string,\n\t\t{2004Q2} as string,\n\t\t{2004Q3} as string,\n\t\t{2004Q4} as string,\n\t\t{2005Q1} as string,\n\t\t{2005Q2} as string,\n\t\t{2005Q3} as string,\n\t\t{2005Q4} as string,\n\t\t{2006Q1} as string,\n\t\t{2006Q2} as string,\n\t\t{2006Q3} as string,\n\t\t{2006Q4} as string,\n\t\t{2007Q1} as string,\n\t\t{2007Q2} as string,\n\t\t{2007Q3} as string,\n\t\t{2007Q4} as string,\n\t\t{2008Q1} as string,\n\t\t{2008Q2} as string,\n\t\t{2008Q3} as string,\n\t\t{2008Q4} as string,\n\t\t{2009Q1} as string,\n\t\t{2009Q2} as string,\n\t\t{2009Q3} as string,\n\t\t{2009Q4} as string,\n\t\t{2010Q1} as string,\n\t\t{2010Q2} as string,\n\t\t{2010Q3} as string,\n\t\t{2010Q4} as string,\n\t\t{2011Q1} as string,\n\t\t{2011Q2} as string,\n\t\t{2011Q3} as string,\n\t\t{2011Q4} as string,\n\t\t{2012Q1} as string,\n\t\t{2012Q2} as string,\n\t\t{2012Q3} as string,\n\t\t{2012Q4} as string,\n\t\t{2013Q1} as string,\n\t\t{2013Q2} as string,\n\t\t{2013Q3} as string,\n\t\t{2013Q4} as string,\n\t\t{2014Q1} as string,\n\t\t{2014Q2} as string,\n\t\t{2014Q3} as string,\n\t\t{2014Q4} as string,\n\t\t{2015Q1} as string,\n\t\t{2015Q2} as string,\n\t\t{2015Q3} as string,\n\t\t{2015Q4} as string,\n\t\t{2016Q1} as string,\n\t\t{2016Q2} as string,\n\t\t{2016Q3} as string,\n\t\t{2016Q4} as string,\n\t\t{2017Q1} as double,\n\t\t{2017Q2} as double,\n\t\t{2017Q3} as double,\n\t\t{2017Q4} as double,\n\t\t{2018Q1} as double,\n\t\t{2018Q2} as double,\n\t\t{2018Q3} as double,\n\t\t{2018Q4} as double,\n\t\t{2019Q1} as double,\n\t\t{2019Q2} as double,\n\t\t{2019Q3} as double,\n\t\t{2019Q4} as double,\n\t\t{2020Q1} as double,\n\t\t{2020Q2} as double,\n\t\t{2020Q3} as double,\n\t\t{2020Q4} as double,\n\t\t{2021Q1} as double,\n\t\t{2021Q2} as string,\n\t\t{2021Q3} as string,\n\t\t{_c99} as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource1 filter({Country Name}=='Sweden') ~> Filter1\nFilter1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tsaveOrder: 1) ~> sink1"
+		}
+	}
+}
